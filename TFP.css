@@ -1,0 +1,243 @@
+.cards {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1px;
+  justify-content: center;
+
+
+}
+
+.center {
+
+  color: rgb(237, 240, 243);
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  box-shadow: 2px 1px 3px rgb(237, 240, 243);
+  text-align: center;
+
+  /* Основные настройки текста */
+  font-size: 3em;
+  /* Подстройте размер по необходимости */
+  font-family: sans-serif;
+  /* Выберите свой шрифт */
+
+  /*display: inline-block; /* Важно для правильного отображения градиента */
+
+  /* Градиент */
+  background-image: linear-gradient(to right,
+      #f5f5f5,
+      /* Цвет 1 */
+      #9e9e9e,
+      /* Цвет 2 */
+      #5f5f5f,
+      /* Цвет 3 */
+      #838383
+      /* Цвет 4 */
+    );
+
+  /* Применяем градиент только к тексту */
+  -webkit-background-clip: text;
+  background-clip: text;
+
+  /* Делаем сам текст прозрачным, чтобы был виден градиент */
+  -webkit-text-fill-color: transparent;
+  text-fill-color: transparent;
+
+  /* Настройка размера фона для анимации */
+  background-size: 400% auto;
+  /* Фон должен быть шире, чем текст */
+
+  /* Анимация */
+  animation: shimmer 8s linear infinite;
+  /* shimmer - имя анимации, 8s - длительность, linear, infinite - бесконечно */
+  margin: auto;
+}
+
+/* Определение ключевых кадров анимации */
+@keyframes shimmer {
+  0% {
+    background-position: 0% 50%;
+    /* Начальная позиция градиента */
+  }
+
+  100% {
+    background-position: 400% 50%;
+    /* Конечная позиция, сдвиг на 400% */
+
+  }
+}
+
+.card {
+  flex-basis: 300px;
+  width: 14rem;
+  width: 200px;
+  flex-direction: column;
+  border-radius: 5px solid rgb(255, 255, 255);
+  border: 3px solid rgb(255, 255, 255);
+  background-color: rgb(66, 66, 66);
+  color: aliceblue;
+  text-align: center;
+ flex: 1 1 60%; /* Карточка будет занимать примерно 30% ширины контейнера */
+  m; /* Ограничивает максимальную ширину, чтобы они не были слишком большими */
+  
+}
+
+img {
+  width: 100%;
+}
+
+.containerp {
+  height: 100px;
+  background-color: rgb(54, 53, 53);
+}
+
+.container {
+  min-height: 100vh;
+  display: flex;
+   flex-direction:column ;
+  flex-wrap: wrap; /* Позволяет карточкам переноситься на новую строку, если не хватает места */
+  gap: 1.5rem; /* Отступы между карточками */
+  justify-content: center; /* Распределяет карточки с равным промежутком */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  overflow-x: hidden;
+  color: white;
+  background-image: url(Roma\ in\ breve.jpg);
+  background-attachment: fixed;
+
+
+
+}
+
+.card-img-topp {
+  background-size: 200px;
+}
+
+h1 {
+  text-align: center;
+}
+
+/* Размытый фон */
+body::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  
+  height: 100%;
+
+  background-image: url("Roma_in_breve.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  filter: blur(8px);
+  /* сила размытия */
+  transform: scale(1.1);
+  /* увеличиваем, чтобы края не были видны */
+  z-index: -2;
+  /* ставим фон позади всего */
+}
+
+/* Тёмный прозрачный слой поверх фона */
+body::after {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.45);
+  /* ← регулируй прозрачность (0.3–0.6) */
+  z-index: -1;
+  filter: blur(5px);
+}
+
+.btn-primary {
+  background-color: rgb(173, 138, 92);
+  border: none;
+  outline: none;
+}
+
+.btn-primary:hover {
+  background-color: rgb(150, 118, 76);
+}
+
+.button4:hover {
+  background-color: #e7e7e7;
+  color: black
+}
+
+.toggle-btn {
+  /* Основные настройки */
+  padding: 12px 25px;
+  border: none;
+  border-radius: 8px;
+  /* Скругленные углы */
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: #575656;
+  /* Белый текст */
+  transition: all 0.3s ease;
+  /* Плавный переход для ховера */
+  padding: 5px;
+  font-size: 20px;
+  margin: 4px;
+
+  /* Градиентный фон */
+  background: linear-gradient(135deg, #fbed6e, #e3c677);
+  /* Красивый фиолетово-синий градиент */
+
+  /* Тень для объема */
+  box-shadow: 0 4px 15px rgba(227, 198, 119, 0.4);
+}
+
+.toggle-btn:hover {
+  /* Эффект при наведении */
+  background: linear-gradient(135deg, #e3ca77, #fbb26e);
+  /* Инверсия градиента */
+  box-shadow: 0 6px 20px rgba(216, 227, 119, 0.6);
+  /* Более сильная тень */
+  transform: translateY(-2px);
+  /* Легкий подъем */
+}
+
+.toggle-btn:active {
+  /* Эффект нажатия */
+  transform: translateY(0);
+  box-shadow: 0 2px 10px rgba(227, 180, 119, 0.4);
+}
+
+.hidden{
+  display: none;
+}
+/* Стили для ноутбука (по умолчанию) */
+
+
+/* Медиазапрос для мобильных устройств (экраны шириной 768px и меньше) */
+@media (max-width: 1000px) {
+  .card-container {
+    flex-direction: column; /* Карточки будут располагаться в столбец */
+    align-items: center; /* Центрирует карточки по горизонтали */
+  }
+
+  .card {
+     /* Делает каждую карточку широкой, но с отступами по краям */
+     /* Добавляет отступ между карточками */
+    justify-content: center;
+  }
+}
+p{
+  text-align: center;
+  
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
